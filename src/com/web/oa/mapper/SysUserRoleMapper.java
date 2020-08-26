@@ -1,7 +1,7 @@
 package com.web.oa.mapper;
 
-import com.gec.domain.SysUserRole;
-import com.gec.domain.SysUserRoleExample;
+import com.web.oa.pojo.SysUserRole;
+import com.web.oa.pojo.SysUserRoleExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

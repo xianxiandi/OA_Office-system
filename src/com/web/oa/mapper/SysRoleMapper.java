@@ -1,7 +1,7 @@
 package com.web.oa.mapper;
 
-import com.gec.domain.SysRole;
-import com.gec.domain.SysRoleExample;
+import com.web.oa.pojo.SysRole;
+import com.web.oa.pojo.SysRoleExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

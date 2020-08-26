@@ -1,7 +1,7 @@
 package com.web.oa.mapper;
 
-import com.gec.domain.BaoxiaoBill;
-import com.gec.domain.BaoxiaoBillExample;
+import com.web.oa.pojo.BaoxiaoBill;
+import com.web.oa.pojo.BaoxiaoBillExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

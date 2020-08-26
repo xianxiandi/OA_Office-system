@@ -29,7 +29,7 @@
         <!-- 自定义filter配置 -->
         <property name="filters">
             <map>
-                <entry key="authc" value="formAuthenticationFilter"/>
+                <entry key="authc" value-ref="formAuthenticationFilter"/>
             </map>
         </property>
         <!-- 过虑器链定义，从上向下顺序执行，一般将/**放在最下边 -->

@@ -1,7 +1,7 @@
 package com.web.oa.mapper;
 
-import com.gec.domain.Employee;
-import com.gec.domain.EmployeeExample;
+import com.web.oa.pojo.Employee;
+import com.web.oa.pojo.EmployeeExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -28,4 +28,5 @@ public interface EmployeeMapper {
     int updateByPrimaryKeySelective(Employee record);
 
     int updateByPrimaryKey(Employee record);
+
 }

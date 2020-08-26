@@ -1,7 +1,7 @@
 package com.web.oa.mapper;
 
-import com.gec.domain.SysRolePermission;
-import com.gec.domain.SysRolePermissionExample;
+import com.web.oa.pojo.SysRolePermission;
+import com.web.oa.pojo.SysRolePermissionExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

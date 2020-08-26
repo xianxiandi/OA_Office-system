@@ -1,7 +1,7 @@
 package com.web.oa.mapper;
 
-import com.gec.domain.SysPermission;
-import com.gec.domain.SysPermissionExample;
+import com.web.oa.pojo.SysPermission;
+import com.web.oa.pojo.SysPermissionExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

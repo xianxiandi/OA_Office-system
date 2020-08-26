@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.gec.mapper.BaoxiaoBillMapper" >
-  <resultMap id="BaseResultMap" type="com.gec.domain.BaoxiaoBill" >
+<mapper namespace="com.web.oa.mapper.BaoxiaoBillMapper" >
+  <resultMap id="BaseResultMap" type="com.web.oa.pojo.BaoxiaoBill" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="money" property="money" jdbcType="DECIMAL" />
     <result column="title" property="title" jdbcType="VARCHAR" />
@@ -71,7 +71,7 @@
   <sql id="Base_Column_List" >
     id, money, title, remark, creatdate, state, user_id
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.gec.domain.BaoxiaoBillExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.web.oa.pojo.BaoxiaoBillExample" >
     select
     <if test="distinct" >
       distinct
@@ -95,13 +95,13 @@
     delete from baoxiaobill
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.gec.domain.BaoxiaoBillExample" >
+  <delete id="deleteByExample" parameterType="com.web.oa.pojo.BaoxiaoBillExample" >
     delete from baoxiaobill
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.gec.domain.BaoxiaoBill" >
+  <insert id="insert" parameterType="com.web.oa.pojo.BaoxiaoBill" >
     insert into baoxiaobill (id, money, title, 
       remark, creatdate, state, 
       user_id)
@@ -109,7 +109,7 @@
       #{remark,jdbcType=VARCHAR}, #{creatdate,jdbcType=TIMESTAMP}, #{state,jdbcType=INTEGER}, 
       #{userId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.gec.domain.BaoxiaoBill" >
+  <insert id="insertSelective" parameterType="com.web.oa.pojo.BaoxiaoBill" >
     insert into baoxiaobill
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -158,7 +158,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.gec.domain.BaoxiaoBillExample" resultType="java.lang.Integer" >
+  <select id="countByExample" parameterType="com.web.oa.pojo.BaoxiaoBillExample" resultType="java.lang.Integer" >
     select count(*) from baoxiaobill
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
@@ -206,7 +206,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.gec.domain.BaoxiaoBill" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.web.oa.pojo.BaoxiaoBill" >
     update baoxiaobill
     <set >
       <if test="money != null" >
@@ -230,7 +230,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.gec.domain.BaoxiaoBill" >
+  <update id="updateByPrimaryKey" parameterType="com.web.oa.pojo.BaoxiaoBill" >
     update baoxiaobill
     set money = #{money,jdbcType=DECIMAL},
       title = #{title,jdbcType=VARCHAR},
