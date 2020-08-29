@@ -1,11 +1,11 @@
 package com.web.oa.mapper;
 
+import java.util.List;
+
 import com.web.oa.pojo.EmployeeCustom;
 import com.web.oa.pojo.MenuTree;
 import com.web.oa.pojo.SysPermission;
 import com.web.oa.pojo.SysRole;
-
-import java.util.List;
 
 
 public interface SysPermissionMapperCustom {

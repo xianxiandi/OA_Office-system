@@ -2,9 +2,8 @@ package com.web.oa.mapper;
 
 import com.web.oa.pojo.SysRole;
 import com.web.oa.pojo.SysRoleExample;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface SysRoleMapper {
     int countByExample(SysRoleExample example);

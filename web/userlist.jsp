@@ -112,9 +112,9 @@
 						    <td>
 						    	<select class="form-control" name="role" onchange="getNextManager(this.value)">
 						    		<option value="1">普通员工</option>
-						    		<option value="2">一级主管</option>
-						    		<option value="3">二级主管</option>
-						    		<option value="4">总经理</option>
+						    		<option value="2">部门经理</option>
+						    		<option value="3">总经理</option>
+						    		<option value="4">财务</option>
 						    	</select>
 						    </td>
 						</tr>					

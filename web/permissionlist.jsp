@@ -51,7 +51,7 @@
 				                		<td>${role.name}</td>
 				                		<td>
 				                			<a href="#" onclick="viewPermissions('${role.id}')" class="btn btn-info btn-xs" ><span class="glyphicon glyphicon-edit"></span> 编辑</a>
-											<a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> 删除</a>
+											<a href="${pageContext.request.contextPath}/delete.action?roleId=${role.id}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> 删除</a>
 				                		</td>
 				                	</tr>
 				                </c:forEach>

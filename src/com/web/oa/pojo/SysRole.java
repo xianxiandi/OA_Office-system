@@ -1,11 +1,15 @@
 package com.web.oa.pojo;
 
+import java.util.List;
+
 public class SysRole {
     private String id;
 
     private String name;
 
     private String available;
+    
+    private List<SysPermission> permissionList;
 
     public String getId() {
         return id;
@@ -30,4 +34,13 @@ public class SysRole {
     public void setAvailable(String available) {
         this.available = available == null ? null : available.trim();
     }
+
+	public List<SysPermission> getPermissionList() {
+		return permissionList;
+	}
+
+	public void setPermissionList(List<SysPermission> permissionList) {
+		this.permissionList = permissionList;
+	}
+    
 }

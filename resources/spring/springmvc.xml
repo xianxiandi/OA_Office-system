@@ -35,4 +35,7 @@
         <property name="maxInMemorySize" value="4096"/>
         <property name="defaultEncoding" value="UTF-8"/>
     </bean>
+
+    <!--配置spring mvc 全局异常处理器-->
+    <bean class="com.web.oa.myexception.MyHandlExceptionResvler"></bean>
 </beans>

@@ -1,12 +1,12 @@
 package com.web.oa.pojo;
 
-import java.math.BigDecimal;
+
 import java.util.Date;
 
 public class BaoxiaoBill {
-    private Integer id;
+    private Long id;
 
-    private BigDecimal money;
+    private Double money;
 
     private String title;
 
@@ -16,21 +16,21 @@ public class BaoxiaoBill {
 
     private Integer state;
 
-    private Integer userId;
+    private Long userId;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public BigDecimal getMoney() {
+    public Double getMoney() {
         return money;
     }
 
-    public void setMoney(BigDecimal money) {
+    public void setMoney(Double money) {
         this.money = money;
     }
 
@@ -66,11 +66,11 @@ public class BaoxiaoBill {
         this.state = state;
     }
 
-    public Integer getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 }

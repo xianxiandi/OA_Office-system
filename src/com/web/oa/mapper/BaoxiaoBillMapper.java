@@ -2,16 +2,15 @@ package com.web.oa.mapper;
 
 import com.web.oa.pojo.BaoxiaoBill;
 import com.web.oa.pojo.BaoxiaoBillExample;
-import org.apache.ibatis.annotations.Param;
-
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
 public interface BaoxiaoBillMapper {
     int countByExample(BaoxiaoBillExample example);
 
     int deleteByExample(BaoxiaoBillExample example);
 
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(Long id);
 
     int insert(BaoxiaoBill record);
 
@@ -19,7 +18,7 @@ public interface BaoxiaoBillMapper {
 
     List<BaoxiaoBill> selectByExample(BaoxiaoBillExample example);
 
-    BaoxiaoBill selectByPrimaryKey(Integer id);
+    BaoxiaoBill selectByPrimaryKey(Long id);
 
     int updateByExampleSelective(@Param("record") BaoxiaoBill record, @Param("example") BaoxiaoBillExample example);
 
