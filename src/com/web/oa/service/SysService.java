@@ -30,4 +30,5 @@ public interface SysService {
     void addSysPermisson(SysPermission permission);
 
     void deleteRole(String roleId);
+
 }

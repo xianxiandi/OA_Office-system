@@ -23,5 +23,6 @@ public class ManagerTaskHandler implements TaskListener {
         EmployeeService employeeService = (EmployeeService) context.getBean("employeeService");
        Employee manager= employeeService.findEmployeeManager(activeUser.getManagerId());
        delegateTask.setAssignee(manager.getName());
+
     }
 }

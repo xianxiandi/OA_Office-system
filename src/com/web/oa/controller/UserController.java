@@ -149,6 +149,11 @@ public class UserController {
         return "redirect:/findRoles";
     }
 
+    @RequestMapping("/delUser")
+    public String delUser(String userId){
+        employeeService.deleteUser(userId);
+        return "redirect:/findUserList";
+    }
 
 
 

@@ -23,6 +23,23 @@
     <![endif]-->
     <script src="js/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".delete").click(function () {
+                var id=$(this).attr('id');
+                if (confirm("是否确认删除")){
+                    $.ajax({
+                        url:"leaveBillAction_delete",
+                        type:"post",
+                        data:{"id":id},
+                        success: function () {   //请求成功后执行的操作
+                            window.location.reload()  //刷新页面
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 </head>
 <body>
 
@@ -78,8 +95,8 @@
 				 					 		class="btn btn-success btn-xs"><span class="glyphicon glyphicon-eye-open"></span> 查看当前流程图</a>
 				 				</c:if>
 				 				<c:if test="${bill.state==2}">
-				 					<a href="leaveBillAction_delete?id=${bill.id}" 
-				 							class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> 删除</a>
+				 					<a id="${bill.id}"
+				 							class="btn btn-danger btn-xs delete"><span class="glyphicon glyphicon-remove"></span> 删除</a>
 				 					<a href="${pageContext.request.contextPath }/viewHisComment?id=${bill.id}" 
 				 							class="btn btn-success btn-xs"><span class="glyphicon glyphicon-eye-open"></span> 查看审核记录</a>			 				
 				 				</c:if>

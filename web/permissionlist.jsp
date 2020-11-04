@@ -23,6 +23,20 @@
     <![endif]-->
     <script src="js/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+        $(function () {
+            $(".delete").click(function () {
+                var id=$(this).attr('roleId');
+                if (confirm("是否确认删除")){
+                    $.ajax({
+                        url:"delete.action",
+                        type:"post",
+                        data:{"roleId":id},
+                    });
+                }
+            });
+        })
+	</script>
 </head>
 <body>
 
@@ -51,8 +65,8 @@
 				                		<td>${role.name}</td>
 				                		<td>
 				                			<a href="#" onclick="viewPermissions('${role.id}')" class="btn btn-info btn-xs" ><span class="glyphicon glyphicon-edit"></span> 编辑</a>
-											<a href="${pageContext.request.contextPath}/delete.action?roleId=${role.id}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> 删除</a>
-				                		</td>
+											<a roleId="${role.id}"
+											   class="btn btn-danger btn-xs delete"><span class="glyphicon glyphicon-remove"></span> 删除</a>
 				                	</tr>
 				                </c:forEach>
 	                    </tbody>

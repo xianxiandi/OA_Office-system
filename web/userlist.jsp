@@ -23,6 +23,20 @@
     <![endif]-->
     <script src="js/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+        $(function () {
+            $(".delete").click(function () {
+                var id=$(this).attr('userId');
+                if (confirm("是否确认删除")){
+                    $.ajax({
+                        url:"delUser",
+                        type:"post",
+                        data:{"userId":id},
+                    });
+                }
+            });
+        })
+	</script>
 </head>
 <body>
 
@@ -71,6 +85,8 @@
 	                        <td>
 				 				<a href="#" onclick="viewPermission('${user.name}')" class="btn btn-success btn-xs" data-toggle="modal" data-target="#editModal">
 				 					<span class="glyphicon glyphicon-eye-open"></span> 查看权限</a>
+								<a userId="${user.id}"
+								   class="btn btn-danger btn-xs delete"><span class="glyphicon glyphicon-remove"></span> 删除</a>
 	                        </td>
 	                    </tr>
 					</c:forEach>

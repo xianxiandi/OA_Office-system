@@ -10,7 +10,7 @@ public class MyHandlExceptionResvler implements HandlerExceptionResolver {
     @Override
     public ModelAndView resolveException(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) {
 
-        String aa="请检查是否全部填写完成.....";
+        String aa="出现未知错误!请检查是否全部填写完成或是否正确操作.....";
         if(e instanceof MyException){
            aa= ((MyException) e).getMsg();
         }

@@ -51,10 +51,13 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void updateEmployeeRole(String roleId, String userId) {
         SysUserRoleExample example = new SysUserRoleExample();
         SysUserRoleExample.Criteria criteria = example.createCriteria();
-        criteria.andSysRoleIdEqualTo(roleId);
+        criteria.andSysUserIdEqualTo(userId);
         SysUserRole userRole = sysUserRoleMapper.selectByExample(example).get(0);
-        userRole.setSysRoleId(roleId);
-        sysUserRoleMapper.updateByPrimaryKey(userRole);
+        if(userRole!=null&&!userRole.equals("")){
+            userRole.setSysRoleId(roleId);
+            sysUserRoleMapper.updateByPrimaryKey(userRole);
+        }
+
     }
 
     @Override
@@ -85,6 +88,16 @@ public class EmployeeServiceImpl implements EmployeeService {
        ur.setSysRoleId(String.valueOf(employee.getRole()));
         int insert = sysUserRoleMapper.insert(ur);
         return i;
+    }
+
+    @Override
+    public void deleteUser(String userId) {
+        Employee employee = employeeMapper.selectByPrimaryKey(Long.valueOf(userId));
+        SysUserRoleExample userRoleExample = new SysUserRoleExample();
+        SysUserRoleExample.Criteria criteria1 = userRoleExample.createCriteria();
+        criteria1.andSysUserIdEqualTo(userId);
+        employeeMapper.deleteByPrimaryKey(Long.valueOf(userId));
+        sysUserRoleMapper.deleteByExample(userRoleExample);
     }
 
 }

@@ -17,4 +17,6 @@ public interface EmployeeService {
     List<Employee> findEmployeeByLevel(int level);
 
     int saveUser(Employee employee);
+
+    void deleteUser(String userId);
 }

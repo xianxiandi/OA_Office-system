@@ -21,6 +21,8 @@ public class SysServiceImpl implements SysService {
     private SysPermissionMapper sysPermissionMapper;
     @Autowired
     private SysUserRoleMapper sysUserRoleMapper;
+    @Autowired
+    private EmployeeMapper employeeMapper;
 
 
     @Override
@@ -116,21 +118,27 @@ public class SysServiceImpl implements SysService {
     }
 
     @Override
-    public void deleteRole(String roleId) {
+        public void deleteRole(String roleId) {
 
-        SysRolePermissionExample example = new SysRolePermissionExample();
-        SysRolePermissionExample.Criteria criteria = example.createCriteria();
-        criteria.andSysRoleIdEqualTo(roleId);
-        SysUserRoleExample userRoleExample = new SysUserRoleExample();
-        SysUserRoleExample.Criteria criteria1 = userRoleExample.createCriteria();
-        criteria1.andSysRoleIdEqualTo(roleId);
+            SysRolePermissionExample example = new SysRolePermissionExample();
+            SysRolePermissionExample.Criteria criteria = example.createCriteria();
+            criteria.andSysRoleIdEqualTo(roleId);
+            SysUserRoleExample userRoleExample = new SysUserRoleExample();
+            SysUserRoleExample.Criteria criteria1 = userRoleExample.createCriteria();
+            criteria1.andSysRoleIdEqualTo(roleId);
 
-        sysRoleMapper.deleteByPrimaryKey(roleId);
-        if (example!=null&&example.equals("")){
-            sysRolePermissionMapper.deleteByExample(example);
-        }
-        if (userRoleExample!=null&&userRoleExample.equals("")){
-            sysUserRoleMapper.deleteByExample(userRoleExample);
-        }
+             sysRoleMapper.deleteByPrimaryKey(roleId);
+            if (example!=null&&!example.equals("")){
+                sysRolePermissionMapper.deleteByExample(example);
+            }
+            if (userRoleExample!=null&&!userRoleExample.equals("")){
+                List<SysUserRole> sysUserRoles = sysUserRoleMapper.selectByExample(userRoleExample);
+
+                if (sysUserRoles.size()>0) {
+                    sysUserRoles.get(0).setSysRoleId("1");
+                    sysUserRoleMapper.updateByPrimaryKey(sysUserRoles.get(0));
+                }
+            }
     }
+
 }

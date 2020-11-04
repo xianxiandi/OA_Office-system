@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-<span style="background-color: red">${Msg}</span>
+<span style="background-color: #ff404c">${Msg}</span>
 </body>
 </html>
